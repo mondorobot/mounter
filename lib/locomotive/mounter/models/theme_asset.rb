@@ -10,7 +10,7 @@ module Locomotive
 
         PRECOMPILED_FILE_TYPES    = PRECOMPILED_CSS_TYPES + PRECOMPILED_JS_TYPES
 
-        CSS_JS_SHORT_PATH_REGEXP  = /^(javascripts|stylesheets|fonts)\/(.*)$/
+        CSS_JS_SHORT_PATH_REGEXP  = /^(javascripts|stylesheets|fonts|others)\/(.*)$/
 
         ## fields ##
         field :folder
@@ -51,7 +51,7 @@ module Locomotive
         # @return [ String ] The path of the asset without the first folder
         #
         def short_path
-          self.path =~ /^(javascripts|stylesheets|fonts)\/(.*)$/
+          self.path =~ /^(javascripts|stylesheets|fonts|others)\/(.*)$/
           $2
         end
 
